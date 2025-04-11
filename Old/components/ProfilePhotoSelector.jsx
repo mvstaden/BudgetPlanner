@@ -1,6 +1,7 @@
 import { LuTrash, LuUpload, LuUser } from "react-icons/lu";
 
 const ProfilePhotoSelector = ({ image, setImage }) => {
+  
   return (
     <div className="flex justify-center mb-6">
       <input type="file" accept="image/*" className="hidden" />
@@ -19,7 +20,10 @@ const ProfilePhotoSelector = ({ image, setImage }) => {
             alt="profile photo"
             className="h-20 w-20 rounded-full object-cover"
           />
-          <button>
+          <button
+            type="button"
+            className="h-8 w-8 flex items-center justify-center bg-red-500 text-white rounded-full absolute -bottom-1 -right-1"
+          >
             <LuTrash />
           </button>
         </div>

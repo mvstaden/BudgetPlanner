@@ -1,6 +1,10 @@
+import DashboardLayout from "../../layouts/DashboardLayout";
+
 const Income = () => {
-  return <div>
-    
-  </div>;
+  return (
+    <DashboardLayout>
+      <h1>Income</h1>
+    </DashboardLayout>
+  );
 };
 export default Income;

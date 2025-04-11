@@ -20,7 +20,7 @@ const Input = ({ label, value, onChange, placeholder, type }) => {
           placeholder={placeholder}
           className="w-full bg-transparent outline-none"
           value={value}
-          onChange={() => onChange("email")}
+          onChange={(e) => onChange(e)}
         />
         {type === "password" && (
           <>

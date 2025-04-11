@@ -8,7 +8,7 @@ import {
 export const side_menu_urls = [
   {
     id: "01",
-    path: "/",
+    path: "/home",
     label: "Home",
     icon: LuLayoutDashboard,
   },
