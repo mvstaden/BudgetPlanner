@@ -26,6 +26,18 @@ export const side_menu_urls = [
   },
   {
     id: "04",
+    path: "/loans",
+    label: "Loans",
+    icon: LuWalletMinimal,
+  },
+  {
+    id: "05",
+    path: "/daily",
+    label: "Daily Transactions",
+    icon: LuWalletMinimal,
+  },
+  {
+    id: "06",
     path: "/logout",
     label: "Log Out",
     icon: LuLogOut,

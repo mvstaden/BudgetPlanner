@@ -14,7 +14,7 @@ const SideMenu = () => {
 
       <nav className="flex flex-col gap-4  ">
         {side_menu_urls.map((link) => (
-          <div>
+  <div key={link.id  }>
             <NavLink
               className={({ isActive }) =>
                 isActive
