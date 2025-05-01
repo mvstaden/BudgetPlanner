@@ -4,16 +4,17 @@ const RecurrenceType = ["once", "daily", "weekly", "monthly", "yearly"];
 
 const expenseSchema = new mongoose.Schema(
   {
-    expenseName: { type: String, required: true },
-    recurrenceType: { type: String, required: true, enum: RecurrenceType },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    name: { type: String, required: true },
     amount: { type: Number, required: true },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+    category: { type: String, required: true }, // eg. Groceries,fuel
+    recurrenceType: {
+      type: String,
+      enum: ["daily", "monthly"],
       required: true,
-      default: "daily",
     },
-    notes: { type: String, default: "" },
+    date: { type: Date, required: true }, //When the expense occurs
+    createdAt: { type: Date, default: Date.now() },
   },
   { timestamps: true }
 );
