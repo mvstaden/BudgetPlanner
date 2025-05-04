@@ -1,5 +1,6 @@
 import express from "express";
 import { createExpense } from "../controllers/epxenseController.js";
+import { protectRoute } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 

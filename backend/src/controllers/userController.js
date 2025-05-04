@@ -87,3 +87,12 @@ export const logout = async (req, res) => {
     return res.status(500).json({ message: "Server error" });
   }
 };
+
+export const userAuth = async (req, res) => {
+  try {
+    return res.status(200).json(req.user);
+  } catch (error) {
+    console.log("Error getting auth user", error.message);
+    return res.status(500).json({ message: "Server error" });
+  }
+};

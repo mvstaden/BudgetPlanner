@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 
-const RecurrenceType = ["once", "daily", "weekly", "monthly", "yearly"];
-
 const expenseSchema = new mongoose.Schema(
   {
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },

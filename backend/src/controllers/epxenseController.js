@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Expense from "../models/expenseModel";
+import Expense from "../models/expenseModel.js";
 
 export const createExpense = async (req, res) => {
   const { name, amount, category, recurrenceType, date } = req.body;
