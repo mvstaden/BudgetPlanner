@@ -18,7 +18,7 @@ export const protectRoute = async (req, res, next) => {
     if (!user) {
       return res.status(404).json({ message: "Invalid user" });
     }
-
+    req.userId = user._id;
     req.user = user;
     next();
   } catch (error) {

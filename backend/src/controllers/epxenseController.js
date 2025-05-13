@@ -23,3 +23,13 @@ export const createExpense = async (req, res) => {
     return res.status(500).json({ message: "Server error" });
   }
 };
+
+export const getExpenses = async (req, res) => {
+  try {
+    const expenses = await Expense.find({ userId: req.userId });
+    res.status(200).json(expenses);
+  } catch (error) {
+    console.log("Error getting all expenses", error.message);
+    return res.status(500).json({ message: "Server error" });
+  }
+};
