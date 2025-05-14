@@ -13,7 +13,7 @@ export const createExpense = async (req, res) => {
     category,
     recurrenceType,
     date,
-    userId: req.user._id,
+    userId: req.user.id,
   });
   try {
     await newExpense.save();
@@ -30,6 +30,35 @@ export const getExpenses = async (req, res) => {
     res.status(200).json(expenses);
   } catch (error) {
     console.log("Error getting all expenses", error.message);
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const getDailyTransactions = async (req, res) => {
+  const userId = req.user.id;
+  try {
+    const dailyExpenses = await Expense.find({
+      recurrenceType: "daily",
+      userId: userId,
+    });
+    console.log(userId);
+    return res.status(200).json(dailyExpenses);
+  } catch (error) {
+    console.log("Error getting daily transactions", error.message);
+    return res.status(200).json({ message: "Server error" });
+  }
+};
+
+export const getMonthlyExpenses = async (req, res) => {
+  const userId = req.user.id;
+  try {
+    const monthlyExpenses = await Expense.find({
+      recurrenceType: "monthly",
+      userId: userId,
+    });
+    return res.status(200).json(monthlyExpenses);
+  } catch (error) {
+    console.log("Error getting monthly expenses", error.message);
     return res.status(500).json({ message: "Server error" });
   }
 };
