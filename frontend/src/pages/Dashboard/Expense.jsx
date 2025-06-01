@@ -51,7 +51,7 @@ const Expense = () => {
     <DashboardLayout>
       <div className="bg-gray-300 mx-5 p-6">
         <div className=" px-4 py-4 flex justify-between items-center">
-          <h1 className="text-3xl">Loans</h1>
+          <h1 className="text-3xl">Expenses</h1>
           <button className="flex items-center gap-1 border border-cyan-200 p-2 text-sm rounded-xl bg-cyan-900 hover:bg-cyan-600 hover:text-cyan-900 text-white">
             <GoPlus className="w-5 h-5 text-white   cursor-pointer" />
             Add Expense

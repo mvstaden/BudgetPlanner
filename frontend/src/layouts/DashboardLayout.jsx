@@ -5,7 +5,7 @@ const DashboardLayout = ({ children }) => {
   return (
     <div className="min-h-screen flex">
       <SideMenu />
-      <div className="flex-1 mx-5">{children}</div>
+      <div className="flex-1 mx-5 my-5">{children}</div>
     </div>
   );
 };
