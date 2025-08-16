@@ -1,7 +1,6 @@
-const Balance = ({ income, expense }) => {
-  const balance = 0;
+const Balance = ({ income, expense, balance }) => {
   return (
-    <div className="bg-linear-[135deg] from-[#a8d5ba] to-[#6b8e23] p-6 rounded-2xl shadow-sm mb-6 text-center">
+    <div className="bg-linear-[135deg] from-[#f6fcf9] to-[#6b8e23] p-6 rounded-2xl shadow-sm mb-6 text-center">
       <h2>Your balance</h2>
       <h1 className="text-4xl">${balance}</h1>
 

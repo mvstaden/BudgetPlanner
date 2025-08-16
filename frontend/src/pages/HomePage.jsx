@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import AddTransaction from "../components/AddTransaction";
 import Transactions from "../components/Transactions";
-import { FaHome } from "react-icons/fa";
+import { MdOutlineDashboard } from "react-icons/md";
 import Balance from "../components/Balance";
+import { dashboardLinks } from "../lib/data";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [transactions, setTransactions] = useState(() => {
@@ -17,7 +19,7 @@ const HomePage = () => {
 
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
-  const [balance, setBalance] = useState("");
+  const [balance, setBalance] = useState(0);
 
   // let income = 0;
 
@@ -67,32 +69,16 @@ const HomePage = () => {
   };
   return (
     <div className="min-h-screen bg-linear-[135deg] from-[#2e8b57] to-[#a8d5ba] flex items-center justify-center p-5">
-      <div className="max-w-6xl w-full flex h-[850px]">
-        <aside className="w-64 bg-gray-500 h-full">
-          <div>
-            <h1>Expense</h1>
-          </div>
-          <nav>
-            <ul>
-              <li>Dashboard</li>
-              <li>Income</li>
-              <li>Expenses</li>
-              <li>Transactions</li>
-              <li>Settings</li>
-            </ul>
-          </nav>
-        </aside>
-        <div
-          className=" w-full bg-white 
-        rounded-3xl shadow overflow-auto flex "
-        >
-          <div className="px-8 pt-8">
+      <div className="max-w-6xl w-full h-[850px]">
+        <div className="bg-white rounded-3xl shadow overflow-auto h-full flex">
+         
+          <div className="px-8 pt-8 w-full">
             <h1 className="text-center text-4xl mb-8 tracking-tight ">
               Expense Tracker
             </h1>
 
             {/* Balance container */}
-            <Balance income={income} expense={expense} />
+            <Balance income={income} expense={expense} balance={balance} />
 
             {/* Main content */}
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
