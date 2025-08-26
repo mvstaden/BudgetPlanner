@@ -1,41 +1,54 @@
+import { Link, NavLink } from "react-router-dom";
 import { dashboardLinks } from "../../lib/data";
+import { MdDashboard } from "react-icons/md";
+import { useState } from "react";
 
 const Sidebar = () => {
   return (
-    <aside className=" bg-gray-500 w-96 p-6">
-      <div className="text-center mb-5 border-b border-green-300">
-        <h1 className="text-3xl mb-5">Budgie</h1>
+    <div className="bg-gray-900 fixed bottom-0 left-0 right-0 md:relative md:pl-0 px-4 pt-2 rounded-t-lg transition-all md:w-[300px]">
+      <div className="hidden md:block text-white px-8 py-10">
+        <h1 className="text-3xl">FInance</h1>
       </div>
-      <nav className=" ">
-        <div className="flex flex-col gap-4">
-          {dashboardLinks.map(({ path, text, Icon }) => (
-            <Link
-              key={text}
-              to={path}
-              className="pl-4 pr-8 py-4 w-full flex items-center justify-start text-xl border-x-[3px] shadow hover:border-x-[3px] hover:border-green-400   bg-white rounded-2xl">
-              <Icon className="w-5 h-5 mr-2" />
-              {text}
-            </Link>
-          ))}
-          {/* <li className="pl-4 pr-8 py-4 w-full flex items-center justify-start text-xl border-x-[3px] shadow hover:border-x-[3px] hover:border-green-400   bg-white rounded-2xl">
-                  <MdOutlineDashboard className="w-5 h-5 mr-2" />
-                  Dashboard
-                </li>
-                <li className="pl-4 pr-8 py-4 w-full flex items-center justify-start text-xl border-x-[3px] shadow hover:border-x-[3px] hover:border-green-400   bg-white rounded-2xl">
-                  Income
-                </li>
-                <li className="pl-4 pr-8 py-4 w-full flex items-center justify-start text-xl border-x-[3px] shadow hover:border-x-[3px] hover:border-green-400   bg-white rounded-2xl">
-                  Expenses
-                </li>
-                <li className="pl-4 pr-8 py-4 w-full flex items-center justify-start text-xl border-x-[3px] shadow hover:border-x-[3px] hover:border-green-400   bg-white rounded-2xl">
-                  Transactions
-                </li>
-                <li className="pl-4 pr-8 py-4 w-full flex items-center justify-start text-xl border-x-[3px] shadow hover:border-x-[3px] hover:border-green-400   bg-white rounded-2xl">
-                  Settings
-                </li> */}
-        </div>
+      <nav className="flex md:w-full md:flex-col justify-between">
+        {dashboardLinks.map(({ path, text, Icon }) => (
+          <NavLink
+            to={path}
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "bg-white border-b-4 border-green-600 rounded-t-lg md:border-l-4 md:border-b-0 md:rounded-r-lg md:rounded-t-none"
+                  : "text-gray-300"
+              } pb-2 pt-2 flex md:flex-row md:justify-start sm:w-[104px] items-center md:w-full md:px-8 justify-center sm:flex-col w-full md:gap-4 gap-1`
+            }>
+            <Icon className="size-7 " />
+            <span className="hidden sm:block sm:text-xs">{text}</span>
+          </NavLink>
+        ))}
+        {/* <Link className="bg-white pb-3 pt-2 w-full  flex items-center justify-center border-b-4 border-green-600 rounded-t-lg">
+          <MdDashboard className="h-6 w-6 text-green-600" />
+        </Link>
+        <Link
+          className={`${
+            active
+              ? "bg-white border-b-4 border-green-600 rounded-t-lg"
+              : "text-gray-300"
+          } pb-3 pt-2 w-full flex items-center justify-center `}>
+          <MdDashboard className="h-6 w-6" />
+        </Link>
+        <Link className="bg-white pb-3 pt-2  w-full flex items-center justify-center border-b-4 border-green-600 rounded-t-lg">
+          <MdDashboard className="h-6 w-6" />
+        </Link>
+        <Link className="bg-white pb-3 pt-2 w-full flex items-center justify-center border-b-4 border-green-600 rounded-t-lg">
+          <MdDashboard className="h-6 w-6" />
+        </Link>
+        <Link className="bg-white pb-3 pt-2 w-full flex items-center justify-center border-b-4 border-green-600 rounded-t-lg">
+          <MdDashboard className="h-6 w-6" />
+        </Link>
+        <Link className="bg-white pb-3 pt-2 w-full flex items-center justify-center border-b-4 border-green-600 rounded-t-lg">
+          <MdDashboard className="h-6 w-6" />
+        </Link> */}
       </nav>
-    </aside>
+    </div>
   );
 };
 export default Sidebar;

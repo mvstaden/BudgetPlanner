@@ -20,14 +20,19 @@
     }
   }
 }
+html,
+body,
+#root {
+  height: 100%;
+}
 
-@layer base {
-  html {
-    font-family: var(--font-display);
-  }
-  h2 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 500;
-  }
+html {
+  font-family: var(--font-display);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  
 }
